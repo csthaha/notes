@@ -1,0 +1,49 @@
+
+ellipsis(line = 2)
+  overflow hidden
+  text-overflow ellipsis
+  display -webkit-box
+  -webkit-line-clamp line
+  -webkit-box-orient vertical
+
+overstep(width=150)
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+  width: width
+
+border-1px($color, $pos,$type = solid)
+  position relative
+
+  &::after
+    content ''
+    display block
+    position absolute
+    pointer-events none
+
+    if ($pos == 'right' || ($pos == 'left'))
+      height 100%
+      top 0
+
+    if ($pos == 'top' || ($pos == 'bottom'))
+      width 100%
+      left 0
+
+    for i in $pos
+      border-{i} 1px $type $color
+      {i} 0
+
+@media (-webkit-min-device-pixel-ratio 1.5), (min-device-pixel-ratio 1.5)
+  .border-1px &::after
+    -webkit-transform scaleY(0.7)
+    transform scaleY(0.7)
+
+@media (-webkit-min-device-pixel-ratio 2), (min-device-pixel-ratio 2)
+  .border-1px &::after
+    -webkit-transform scaleY(0.5) // 像素比为2的时候，我们设置缩放为0.5
+    transform scaleY(0.5)
+
+@media (-webkit-min-device-pixel-ratio 3), (min-device-pixel-ratio 3)
+  .border-1px &::after
+    -webkit-transform scaleY(0.333333) // 像素比为3的时候，我们设置缩放为0.33333
+    transform scaleY(0.333333)
