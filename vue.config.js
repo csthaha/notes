@@ -3,6 +3,8 @@
 const path = require('path')
 const vConsolePlugin = require('vconsole-webpack-plugin')
 
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+
 function resolve(dir) {
     return path.join(__dirname, dir)
 }
@@ -40,7 +42,8 @@ module.exports = {
           new vConsolePlugin({
             filter: [],
             enable: envType
-          })
+          }),
+          new BundleAnalyzerPlugin()
         ]
         config.resolve.alias = {
           '@': resolve('src'),
@@ -48,6 +51,7 @@ module.exports = {
           components: '@/components',
           views: '@/views'
         }
+
         config.plugins = [...config.plugins, ...pluginsDev]
     }
 }
