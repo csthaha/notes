@@ -12,6 +12,9 @@ export default {
   name: "Home",
   components: {
     HelloWorld
+  },
+  mounted() {
+    console.log('are you ok ????')
   }
 };
 </script>
