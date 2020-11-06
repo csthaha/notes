@@ -4,13 +4,18 @@
     <ul v-for="(item, index) in list" :key="index">
       <li>
         {{item.index}}-{{item.value}}
+        mixin: {{num}}
       </li>
     </ul>
   </div>
 </template>
 
 <script>
+
+import {myMixin} from '@/mixin/module/mixinTest.js'
+
 export default {
+  mixins: [myMixin],
   data() {
     return {
     }
@@ -34,6 +39,17 @@ export default {
       ].filter((item) => {
         return item.show
       })
+    }
+  },
+  created() {
+    this.num++          // 混入对象 mixin 中的 数据
+
+    this.func_self()    // 组件中的方法
+    this.func_mixin()   // 混入对象 mixin 中的方法
+  },
+  methods: {
+    func_self() {
+      console.log("func from About")
     }
   }
 }
