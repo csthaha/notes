@@ -1,13 +1,26 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
+    <span id="nav" v-for="(item, index) in routesPage" :key="index">
+      <!-- <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link> |
-      <router-link to="/masonry">masonry</router-link>
-    </div>
+      <router-link to="/masonry">Masonry</router-link> -->
+      <router-link :to="item.path">{{item.name}}</router-link> |
+    </span>
     <router-view />
   </div>
 </template>
+
+<script>
+import routes from "./router";
+export default {
+  data() {
+    return {
+      routesPage: routes
+    }
+  },
+
+}
+</script>
 
 <style lang="stylus">
 #app
