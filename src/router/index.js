@@ -32,6 +32,13 @@ const routes = [
     component: () => {
       return import(/* webpackChunkName: "MasonryLayouts" */ "../views/User.vue")
     }
+  },
+  {
+    path: "/js-masonry",
+    name: "JsMasonry",
+    component: () => {
+      return import(/* webpackChunkName: "JsMasonry" */ "../views/JsMasonry.vue")
+    }
   }
 ];
 
