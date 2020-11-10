@@ -62,3 +62,6 @@ Mixins：则是在引入组件之后与组件中的对象和方法进行合并�
 
 
 ## git rebase
+
+## vuex 模块化的使用 mapState, mapGetters, mapMutations
+详情 About.vue 文件中
