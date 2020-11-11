@@ -1,3 +1,57 @@
+## 目录结构
+```
+npm install mddir -g   mddir 自动生成 md 目录
+|-- note
+    |-- .browserslistrc
+    |-- .env
+    |-- .env.development
+    |-- .env.pre
+    |-- .env.production
+    |-- .eslintrc.js
+    |-- .gitignore
+    |-- .prettierrc.js
+    |-- babel.config.js     # babel配置文件
+    |-- package-lock.json
+    |-- package.json
+    |-- postcss.config.js   # 移动端适配
+    |-- README.md
+    |-- vue.config.js   # vue配置文件
+    |-- yarn.lock
+    |-- zLeetcode.js    # leetcode 求中位数
+    |-- public                            # 静态资源
+    |   |-- favicon.ico
+    |   |-- index.html
+    |-- src                               # 业务源码
+        |-- App.vue
+        |-- main.js                       # 项目入口文件
+        |-- assets
+        |   |-- styles
+        |       |-- index.styl
+        |       |-- public
+        |           |-- variables.styl
+        |           |-- vendor.styl
+        |-- components                    # 组件级别文件
+        |   |-- Dialog.vue
+        |   |-- HelloWorld.vue
+        |-- mixin                         # 自定义混入文件
+        |   |-- index.js
+        |   |-- module
+        |       |-- mixinTest.js
+        |-- router                      # 路由相关文件
+        |   |-- index.js
+        |-- store                       # 状态相关文件
+        |   |-- index.js
+        |   |-- module
+        |       |-- moduleA.js
+        |-- views                       # 页面相关文件
+            |-- About.vue
+            |-- Home.vue
+            |-- imgList.js
+            |-- JsMasonry.vue
+            |-- MasonryLayouts.vue
+            |-- User.vue
+
+```
 - vue-cli3 脚手架搭建完成后，项目目录中没有 vue.config.js 文件，需要手动创建（项目根目录创建）
 
   ```javascript
