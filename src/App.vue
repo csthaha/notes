@@ -4,9 +4,13 @@
       <!-- <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link> |
       <router-link to="/masonry">Masonry</router-link> -->
-      <router-link :to="item.path">{{item.name}}</router-link> |
+      <router-link :to="item.path">{{ item.name }}</router-link> |
     </span>
-    <router-view />
+    <keep-alive>
+      <!-- keep-alive 缓存 -->
+      <router-view v-if="$route.meta.keepAlive" :key="$route.fullPath" />
+    </keep-alive>
+    <router-view v-if="!$route.meta.keepAlive" :key="$route.fullPath" />
   </div>
 </template>
 
