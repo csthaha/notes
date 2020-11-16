@@ -6,6 +6,14 @@ import store from "./store";
 import Dialog from './components/Dialog'
 import './assets/styles/index.styl'
 
+import installDirective from "./directive";
+
+/**
+ * 自定义指令
+ * 安装全局义指令
+ * 注册指令在directive文件夹中完成
+ */
+installDirective(Vue);
 Vue.config.productionTip = false;
 
 Vue.component("Mydialog", Dialog)
